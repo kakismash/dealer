@@ -1,0 +1,6 @@
+extends templates/default
+
+block content
+  h1= 'Pag Inicio!'  
+  if isAuthenticated
+    p= 'Welcome ' + user.user_name

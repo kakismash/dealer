@@ -1,0 +1,32 @@
+div(class='ui inverted menu grid')
+  div(class='stretched three wide column')
+    div(class='column')
+      div(class='ui segment inverted')
+        a(href='/')  
+          h1(class='ui red header')
+            i(class='law icon')
+            div(class='content')= 'Dealer Names'
+              h6(class='ui header red')='alguna frase de logo!'
+  div(class='ui category aligned center search item three wide column')
+    div(class='ui segment transparent icon input inverted ')
+      input(class='prompt' placeholder='Search cars...' type='text')
+      i(class='search link icon')
+  
+  div(class='ui secondary menu')
+    a(class='item')= 'Cars'  
+    if isAuthenticated
+      a(class='item' href='/auth/newuser')= 'Create new user'        
+  div(class='item right tiny aligned three wide column')
+    if !isAuthenticated 
+      div(class='item')   
+        a(class='ui red labeled icon button segment'  href='/auth/signin')
+          i(class='sign in icon')
+          div= 'Log-in'
+    if isAuthenticated
+      div(class='ui red item simple dropdown')= user.user_name
+        i(class='dropdown icon segment')
+        div(class='menu segment')
+          a(class='item' href='/users/panel')= 'Perfil'
+          a(class='item' href='/auth/logout')='logout'
+        
+            

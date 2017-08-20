@@ -1,0 +1,28 @@
+extends ../templates/default
+
+block content
+  div(class='row')
+    div(class='col-md-6 col-md-offset-3')
+      div(class='panel panel-default')
+        div(class='panel-heading')= 'New User create by... ' + use_name 
+        div(class='panel-body')
+          form(action='/auth/newuser' method='post' autocomplete='off')
+            div(class='form-group')
+              label(for='email')= 'Email'
+              input(type='email' name='email' id='email' placeholder='Email' class='form-control')
+            div(class='form-group')
+              label(for='username')= 'User Name'
+              input(type='username' name='username' id='username' placeholder='User Name' class='form-control')
+            div(class='form-group')
+              div(class='ui toggle red checkbox')
+                input(type='checkbox' name='access_level' id='access_level' placeholder='super' class='form-control')
+                label(for='access_level')= 'Access Level for this user'    
+            div(class='form-group')
+              label(for='phone')= 'Phone'
+              input(type='phone' name='phone' id='phone' placeholder='Phone' class='form-control')
+            div(class='form-group')
+              label(for='password')= 'Password'
+              input(type='password' name='password' id='password' placeholder='Password' class='form-control')    
+            button(type='submit' class='btn btn-default')= 'Create'    
+                        
+                        
